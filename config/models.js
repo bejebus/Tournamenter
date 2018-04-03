@@ -34,6 +34,8 @@ module.exports = function (app, next){
   app.waterline.initialize(config, (err, ontology) => {
     if(err)
       return next(err);
+    
+    config.migrate = 'safe';
 
     // Expose collections/models to application (Use File name as ID)
     app.models = {};
