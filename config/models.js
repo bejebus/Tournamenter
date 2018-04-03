@@ -16,6 +16,13 @@ module.exports = function (app, next){
   for(var k in models){
     collections[k] = Waterline.Collection.extend(models[k]);
   }
+  
+  var defaults;
+  if(process.env.NODE_ENV === 'production') {
+      defaults = {
+        migrate:  'safe'
+      }
+  }
 
   // Config used in this waterline instance
   var config = {
@@ -28,9 +35,7 @@ module.exports = function (app, next){
     },
 
     collections,
-    defaults: {
-      migrate: 'safe' 
-    }
+    defaults: defaults
   };
    
   // Initialize waterline app
