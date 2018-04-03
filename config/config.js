@@ -11,7 +11,7 @@ var env = process.env
 var package = require('../package.json')
 
 // Server Configs
-var port = env.PORT || 3000;
+var port = env.PORT || 8080;
 var domain = env.DOMAIN || 'localhost:' + port
 
 // Custom Environment Configs
