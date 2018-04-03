@@ -10,6 +10,8 @@ var TAG = chalk.white('[CONFIG]');
 var env = process.env
 var package = require('../package.json')
 
+console.log(env);
+
 // Server Configs
 var port = env.PORT || 8080;
 var domain = env.DOMAIN || 'localhost:' + port
