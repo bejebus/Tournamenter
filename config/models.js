@@ -28,10 +28,11 @@ module.exports = function (app, next){
     },
 
     collections,
+    defaults: {
+      migrate: 'safe' 
+    }
   };
-  
-  config.migrate = 'safe';
-
+   
   // Initialize waterline app
   app.waterline.initialize(config, (err, ontology) => {
     if(err)
